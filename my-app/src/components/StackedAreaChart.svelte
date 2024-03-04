@@ -4,7 +4,7 @@
     import { onMount } from 'svelte';
 
     onMount(() => {
-        d3.csv("src/data/patents_grouped.csv").then(function(data) {
+        d3.csv("data/patents_grouped.csv").then(function(data) {
             const margin = { top: 10, right: 30, bottom: 30, left: 30 };
             const width = 800 - margin.left - margin.right;
             const height = 500 - margin.top - margin.bottom;
