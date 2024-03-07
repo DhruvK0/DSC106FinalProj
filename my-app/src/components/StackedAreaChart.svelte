@@ -129,15 +129,15 @@
 
 <style>
     /* Add your custom styles here */
-    body {
+    /* body {
         font-family: Arial, sans-serif;
-    }
+    } */
     .chart {
         width: 800px;
         height: 400px;
         margin: 50px auto;
     }
-    .axis path,
+    /* .axis path,
     .axis line {
         fill: none;
         stroke: #000;
@@ -151,17 +151,17 @@
     }
     .legend {
         font-size: 12px;
-    }
+    } */
     h1 {
         text-align: center;
         font-family: Arial;
         font-size:32px;
     }
-    h2 {
+    /* h2 {
         text-align: center;
         font-family: Arial;
         font-size:24px;
-    }
+    } */
     h3 {
         text-align: center;
         font-family: Arial;
