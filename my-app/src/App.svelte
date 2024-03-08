@@ -4,6 +4,7 @@
   import StackedAreaChart from "./components/StackedAreaChart.svelte";
   import Lorem from "./components/Lorem.svelte";
   import TitleCard from "./assets/TitleCard.svelte";
+  import LineChart from "./components/LineChart.svelte";
 
   let count;
   let index;
@@ -16,8 +17,12 @@
 
 <main>
   <!-- <ScrollyTeller /> -->
-  <TitleCard class="w-2"/>
-  <Lorem />
+  <TitleCard/>
+  <h1 class="flex items-center justify-center mb-10">A Change in Immigration</h1>
+  <LineChart/>
+  <h2 class="flex items-center justify-center ml-80 mr-80 mb-20">In 1965 the Immigration and Nationality Act was passed, repealing the long standing national-origin quotas which primarily favored immigrants from Western and Northern Europe. The new system favored immigrant families, which allowed well-educated families from non-European countries to establish themselves and create a foothold for their families to immigrate.</h2>
+  
+  <Lorem /> 
   <Scroller
     bind:top
     bind:threshold
