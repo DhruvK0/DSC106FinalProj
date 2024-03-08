@@ -3,6 +3,7 @@
   import Scroller from "@sveltejs/svelte-scroller";
   import StackedAreaChart from "./components/StackedAreaChart.svelte";
   import Lorem from "./components/Lorem.svelte";
+  import TitleCard from "./assets/TitleCard.svelte";
 
   let count;
   let index;
@@ -13,8 +14,9 @@
   let bottom = 0.9;
 </script>
 
-<main class="p-4">
+<main>
   <!-- <ScrollyTeller /> -->
+  <TitleCard class="w-2"/>
   <Lorem />
   <Scroller
     bind:top
