@@ -7,16 +7,14 @@
         width = 460 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
 
-    export let index;
+    export let category;
     let data;
-    let columnNames = [];
-    let colors = ['#fcf9f5', '#024140', '#5e9b85', '#15688c', '#88b8c6', '#39274f', '#da9969'];
+    let colors = ['#fcf9f5', '#024140', '#5e9b85', '#15688c', '#88b8c6'];
 
     // Load your CSV data
     onMount(async () => {
-        data = await d3.csv('data/patents_regrouped.csv', d => {
-            columnNames = Object.keys(d).filter(key => key !== 'Region'); // Assuming 'name' is the categorical column
-            d.value = +d[columnNames[index]]; // Dynamically convert string to number based on index
+        data = await d3.csv('data/visas.csv', d => {
+            d.value = +d[category]; // Dynamically convert string to number based on index
             return d;
         });
         createBarChart();
@@ -24,7 +22,7 @@
 
 
     $: if (data) {
-        console.log('index', index);
+        console.log('category', category);
         updateBarChart();
     }
 
@@ -49,6 +47,7 @@
         svg.append('g')
             .attr('transform', `translate(0,${height})`)
             .call(d3.axisBottom(x))
+            .attr('class', 'x-axis')
             .selectAll('text')
             .attr('transform', 'translate(-10,0)rotate(-45)')
             .style('text-anchor', 'end');
@@ -56,7 +55,7 @@
         // Y axis
         y = d3.scaleBand()
             .range([0, height])
-            .domain(data.map(d => d.Region))
+            .domain(data.map(d => d.Education))
             .padding(.1);
         svg.append('g')
             .call(d3.axisLeft(y));
@@ -68,7 +67,7 @@
             .append('rect')
             .attr('class', 'bar')
             .attr('x', x(0))
-            .attr('y', d => y(d.Region))
+            .attr('y', d => y(d.Education))
             .attr('width', d => x(d.value))
             .attr('height', y.bandwidth())
             .attr('fill', (d, i) => colors[i % colors.length])
@@ -94,14 +93,17 @@
     function updateBarChart() {
         // Process data based on new index
         data.forEach(d => {
-            d.value = +d[columnNames[index]]; // Update value based on current index
+            d.value = +d[category]; // Update value based on current index
         });
 
         // Update the X axis domain
         x.domain([0, d3.max(data, d => d.value)]);
-        svg.select('.x.axis')
+        svg.select('.x-axis')
             .transition()
-            .call(d3.axisBottom(x));
+            .call(d3.axisBottom(x))
+            .selectAll('text')
+            .attr('transform', 'translate(-10,0)rotate(-45)')
+            .style('text-anchor', 'end');
 
         // Update the bars
         bars.data(data)

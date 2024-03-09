@@ -35,7 +35,7 @@
             // Define the color scale
             const color = d3.scaleOrdinal()
                 .domain(keys)
-                .range(d3.schemeCategory10);
+                .range(["#fcf9f5", "#024140", "#5e9b85", "#15688c", "#88b8c6", "#39274f", "#da9969"]);
 
             // Create the stack
             const stack = d3.stack()
@@ -61,6 +61,17 @@
                 .y0(d => y(d[0]))
                 .y1(d => y(d[1]));
 
+            const tooltip = d3.select(".chart")
+                .append("div")
+                .style("opacity", 0)
+                .attr("class", "tooltip")
+                .style("background-color", "white")
+                .style("border", "solid")
+                .style("border-width", "2px")
+                .style("border-radius", "5px")
+                .style("padding", "5px")
+                .style("position", "absolute");
+
             // Add the areas to the chart
             svg.selectAll(".area")
                 .data(series)
@@ -68,20 +79,50 @@
                 .attr("class", "area")
                 .attr("fill", d => color(d.key))
                 .attr("d", area)
+                .on("click", (event, d) => {
+                    const mouseX = d3.pointer(event, svg.node())[0]; // Ensure you reference the correct element for pointer events
+                    const hoveredYear = x.domain().find(year => {
+                        const start = x(year);
+                        const end = start + x.bandwidth();
+                        return mouseX >= start && mouseX < end;
+                    });
+                    if (hoveredYear) {
+                        const yearData = d.find(data => data.data.year === hoveredYear);
+                        tooltip.html(`Region: ${d.key}<br>Year: ${hoveredYear}<br>Percentage: ${d3.format(".0%")(yearData[1] - yearData[0])}`)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 20) + "px")
+                            .style("opacity", 1);
+                    }
+                })
                 .on("mouseover", (event, d) => {
+                    let newcolor = d3.hsl(color(d.key));
+                    newcolor.l -= 0.1;
                     d3.select(event.currentTarget)
-                        .attr("fill", "pink");
-                    svg.append("text")
-                        .attr("class", "region-label")
-                        .attr("x", width-margin.right+25)
-                        .attr("y", y(d[d.length - 1][1])+5)
-                        .attr("text-anchor", "end")
-                        .text(d.key);
+                        .attr("fill", newcolor);
+                    tooltip.style("opacity", 1);
+                    d3.select(event.currentTarget).attr("stroke", "black");
+
+                    const mouseX = d3.pointer(event, this)[0]; // Get the mouse's x position relative to the SVG.
+                    const hoveredYear = x.domain().find(year => {
+                        const start = x(year);
+                        const end = start + x.bandwidth();
+                        return mouseX >= start && mouseX <= end;
+                    });
+                    const yearData = d.find(d => d.data.year === hoveredYear);
+
+                    tooltip.html("Region: " + d.key + "<br>" + "Year: " + hoveredYear + "<br>" + "Percentage: " + d3.format(".0%")(yearData[1] - yearData[0]))
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 20) + "px").style("color", "black");
+                })
+                .on("mousemove", (event) => {
+                    tooltip.style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 20) + "px");
                 })
                 .on("mouseout", (event, d) => {
                     d3.select(event.currentTarget)
                         .attr("fill", color(d.key));
-                    svg.selectAll(".region-label").remove();
+                    d3.select(event.currentTarget).attr("stroke", "none");
+                    tooltip.style("opacity", 0);
                 })
                 .append("title")
                 .text(d => d.key);
@@ -166,6 +207,12 @@
         text-align: center;
         font-family: Arial;
         font-size:18px;
+    }
+
+    .tooltip {
+        opacity: 0; /* Initially hidden */
+        text-align: center;
+        color: black;
     }
 </style>
 

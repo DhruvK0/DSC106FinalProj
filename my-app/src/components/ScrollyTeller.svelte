@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
   import Scroller from "@sveltejs/svelte-scroller";
   import Map from "./Map.svelte";
   import { geoMercator } from "d3-geo";
@@ -98,4 +98,4 @@
     padding: 1em;
     margin: 0 0 2em 0;
   }
-</style> -->
+</style>

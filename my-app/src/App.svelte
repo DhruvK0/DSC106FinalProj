@@ -5,8 +5,7 @@
   import Lorem from "./components/Lorem.svelte";
   import TitleCard from "./assets/TitleCard.svelte";
   import LineChart from "./components/LineChart.svelte";
-  import PatentChart from "./components/PatentChart.svelte";
-
+  import VisaChart from "./components/VisaChart.svelte";
   let count;
   let index;
   let offset;
@@ -14,6 +13,14 @@
   let top = 0.1;
   let threshold = 0.5;
   let bottom = 0.9;
+  let category = "CA Immigrants";
+  $: {
+    if (index == 0) {
+      category = "CA Immigrants";
+    } else {
+      category = "Recent CA Immigrants"
+    }
+  }
 </script>
 
 <main>
@@ -62,20 +69,23 @@
     bind:offset
     bind:progress
   >
-    <div slot="background" class="bg-orange-100 border-t-2 border-b-2 border-orange-500 p-4 mb-20 mt-20 text-lg overflow-hidden">
-      <p>current section: <strong>{index + 1}/{count}</strong></p>
+    <div slot="background" class="pointer-events-all">
+      <!-- <p>current section: <strong>{index + 1}/{count}</strong></p>
       <progress class="w-full" value="{count ? (index + 1) / count : 0}"></progress>
 
       <p>offset in current section</p>
       <progress class="w-full" value="{offset || 0}"></progress>
 
       <p>total progress</p>
-      <progress class="w-full" value="{progress || 0}"></progress>
+      <progress class="w-full" value="{progress || 0}"></progress> -->
 
-      <PatentChart {index}/>
+      {#if index === 0 || index === 1}
+        <VisaChart category="US-born Californians" />
+        <VisaChart {category} />
+      {/if}
     </div>
 
-    <div slot="foreground" class="pointer-events-none mt-10" style="padding-left: 50%;">
+    <div slot="foreground" class="mt-10" style="padding-left: 50%;">
       <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 1</section>
       <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 2</section>
       <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 3</section>
