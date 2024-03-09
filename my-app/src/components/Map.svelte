@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
   import mapboxgl from "mapbox-gl";
   import { onMount } from "svelte";
   export let index;
@@ -104,4 +104,4 @@
     visibility: visible;
   }
 </style>
- -->
+

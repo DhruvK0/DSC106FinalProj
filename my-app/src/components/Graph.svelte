@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
   import { fly, draw } from "svelte/transition";
   import { tweened } from "svelte/motion";
   import { cubicOut, cubicInOut } from "svelte/easing";
@@ -306,4 +306,4 @@
       position: absolute;
       outline: red solid 7px;
     }
-  </style> -->
+  </style>

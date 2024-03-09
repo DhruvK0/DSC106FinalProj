@@ -5,6 +5,7 @@
   import Lorem from "./components/Lorem.svelte";
   import TitleCard from "./assets/TitleCard.svelte";
   import LineChart from "./components/LineChart.svelte";
+  import PatentChart from "./components/PatentChart.svelte";
 
   let count;
   let index;
@@ -16,7 +17,6 @@
 </script>
 
 <main>
-  <!-- <ScrollyTeller /> -->
   <TitleCard/>
   <h1 class="flex items-center justify-center mb-10">A Change in Immigration</h1>
   <LineChart/>
@@ -52,6 +52,7 @@
     </div>
   </Scroller>
   <StackedAreaChart />
+  <div class="h-80"></div>
   <Scroller
     bind:top
     bind:threshold
@@ -70,15 +71,24 @@
 
       <p>total progress</p>
       <progress class="w-full" value="{progress || 0}"></progress>
+
+      <PatentChart {index}/>
     </div>
 
     <div slot="foreground" class="pointer-events-none mt-10" style="padding-left: 50%;">
-      <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 1</section>
-      <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 2</section>
-      <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 3</section>
-      <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 4</section>
-      <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 5</section>
+      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 1</section>
+      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 2</section>
+      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 3</section>
+      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 4</section>
+      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 5</section>
     </div>
+
   </Scroller>
   <Lorem />
 </main>
+
+<style>
+  .custom-height {
+  height: 1000px;
+}
+</style>
