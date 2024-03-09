@@ -217,6 +217,6 @@
 </style>
 
 <h1>Patent applications in the U.S. by the applicants' regions of origin from 1965-2015</h1>
-<h3>Hover over an area on the plot to see which region it represents.</h3>
+<h3>Hover over an area on the plot for more detail. Click to update tooltip.</h3>
 
 <div class="chart"></div>
