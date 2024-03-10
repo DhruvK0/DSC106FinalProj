@@ -6,6 +6,8 @@
   import TitleCard from "./assets/TitleCard.svelte";
   import LineChart from "./components/LineChart.svelte";
   import VisaChart from "./components/VisaChart.svelte";
+  import GdpLineChart from "./components/GDPLineChart.svelte";
+
   let count;
   let index;
   let offset;
@@ -69,7 +71,7 @@
     bind:offset
     bind:progress
   >
-    <div slot="background" class="pointer-events-all">
+    <div slot="background">
       <!-- <p>current section: <strong>{index + 1}/{count}</strong></p>
       <progress class="w-full" value="{count ? (index + 1) / count : 0}"></progress>
 
@@ -80,17 +82,35 @@
       <progress class="w-full" value="{progress || 0}"></progress> -->
 
       {#if index === 0 || index === 1}
-        <VisaChart category="US-born Californians" />
-        <VisaChart {category} />
+      <div class="items-left justify-left">
+          <!-- <VisaChart category="US-born Californians"/> -->
+          <VisaChart {category}/>
+      </div>
+        
+      {/if}
+      {#if index === 2 || index === 3}
+      <div class="items-left justify-left">
+          <GdpLineChart {index}/>
+      </div>
       {/if}
     </div>
 
     <div slot="foreground" class="mt-10" style="padding-left: 50%;">
-      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 1</section>
-      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 2</section>
-      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 3</section>
-      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 4</section>
-      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">section 5</section>
+      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">
+        <h3>CA immigrants suffer from generally low education levels, with just 32% of them having a Bachelor's degree or better in comparison to 38% of their US-born counterparts.</h3>
+      </section>
+      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">
+        <h3>The tides have shifted since, with 52% of recent CA immigrants attaining a Bachelor's degree or better.</h3>
+      </section>
+      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">
+        <h3>We're currently projected for a GDP of $37 trillion by 2050</h3>
+      </section>
+      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">
+        <h3>...but a GDP of $47 trillion if we double the immigration rate.</h3>
+      </section>
+      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">
+        <h3>With Biden recently advocating for a bill that will raise the cap on immigrant visas by 250,000 every 5 years, the U.S. recognizes this and is looking to help fuel our growth in innovation.</h3>
+      </section>
     </div>
 
   </Scroller>
@@ -99,6 +119,6 @@
 
 <style>
   .custom-height {
-  height: 1000px;
+  height: 500px;
 }
 </style>

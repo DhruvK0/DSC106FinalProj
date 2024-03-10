@@ -111,6 +111,14 @@
             .attr('width', d => x(d.value));
     }
 </script>
+<div class="items-center customheight">
+    <h3 class="w-full">Percentage breakdown of {category}</h3>
+    <div id="bar-chart"></div>
+    <div id="tooltip" style="position: absolute; visibility: hidden; padding: 10px; background: white; border: 1px solid #d9d9d9; border-radius: 5px; pointer-events: none; z-index: 10; color: #333"></div>
+</div>
 
-<div id="bar-chart"></div>
-<div id="tooltip" style="position: absolute; visibility: hidden; padding: 10px; background: white; border: 1px solid #d9d9d9; border-radius: 5px; pointer-events: none; z-index: 10; color: #333"></div>
+<style>
+    .customheight {
+        height: 420px
+    }
+</style>
