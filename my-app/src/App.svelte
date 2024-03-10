@@ -113,20 +113,20 @@
     </div>
 
     <div slot="foreground" class="mt-10" style="padding-left: 50%;">
-      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">
-        <h3>CA immigrants suffer from generally low education levels, with just 32% of them having a Bachelor's degree or better in comparison to 38% of their US-born counterparts.</h3>
+      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
+        <h2>CA immigrants suffer from generally low education levels, with just 32% of them having a Bachelor's degree or better in comparison to 38% of their US-born counterparts.</h2>
       </section>
-      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">
-        <h3>The tides have shifted since, with 52% of recent CA immigrants attaining a Bachelor's degree or better.</h3>
+      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
+        <h2>The tides have shifted since, with 52% of recent CA immigrants attaining a Bachelor's degree or better.</h2>
       </section>
-      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">
-        <h3>We're currently projected for a GDP of $37 trillion by 2050</h3>
+      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
+        <h2>We're currently projected for a GDP of $37 trillion by 2050</h2>
       </section>
-      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">
-        <h3>...but a GDP of $47 trillion if we double the immigration rate.</h3>
+      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
+        <h2>...but a GDP of $47 trillion if we double the immigration rate.</h2>
       </section>
-      <section class="pointer-events-all custom-height bg-opacity-50 bg-black text-white p-4 mb-8">
-        <h3>With Biden recently advocating for a bill that will raise the cap on immigrant visas by 250,000 every 5 years, the U.S. recognizes this and is looking to help fuel our growth in innovation.</h3>
+      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
+        <h2>With Biden recently advocating for a bill that will raise the cap on immigrant visas by 250,000 every 5 years, the U.S. recognizes this and is looking to help fuel our growth in innovation.</h2>
       </section>
     </div>
 
