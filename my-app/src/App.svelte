@@ -99,14 +99,14 @@
       <progress class="w-full" value="{progress || 0}"></progress> -->
 
       {#if index === 0 || index === 1}
-      <div class="items-left justify-left">
+      <div class="flex items-left justify-left">
           <!-- <VisaChart category="US-born Californians"/> -->
           <VisaChart {category}/>
       </div>
         
       {/if}
       {#if index === 2 || index === 3}
-      <div class="items-left justify-left">
+      <div class="flex items-left justify-left">
           <GdpLineChart {index}/>
       </div>
       {/if}

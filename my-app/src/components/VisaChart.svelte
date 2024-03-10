@@ -3,7 +3,7 @@
     import * as d3 from 'd3';
 
     // Define the dimensions for your chart
-    const margin = { top: 20, right: 30, bottom: 40, left: 90 },
+    const margin = { top: 20, right: 30, bottom: 40, left: 200 },
         width = 460 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
 

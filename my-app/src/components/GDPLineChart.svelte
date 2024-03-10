@@ -25,7 +25,7 @@
       // Clear existing SVG to redraw
       d3.select(chart).select("svg").remove();
   
-      const margin = { top: 10, right: 30, bottom: 30, left: 60 },
+      const margin = { top: 10, right: 30, bottom: 30, left: 120 },
         width = 460 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
   
@@ -46,9 +46,24 @@
   
       svg.append('g')
         .attr('transform', `translate(0,${height})`)
-        .call(d3.axisBottom(x).ticks(data.length));
+        .call(d3.axisBottom(x).ticks(data.length).tickFormat(d3.format("d")));
       svg.append('g')
         .call(d3.axisLeft(y));
+
+        // X-axis label
+      svg.append("text")             
+        .attr("transform", `translate(${width / 2}, ${height + margin.top + 20})`) // Adjusted for positioning
+        .style("text-anchor", "middle")
+        .text("Year");
+
+      // Y-axis label
+      svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - 60)
+        .attr("x", 0 - (height / 2))
+        .attr("dy", "1em") // Adjust spacing to the axis
+        .style("text-anchor", "middle")
+        .text("U.S GDP (Trillions of Dollars)");
   
       // Define line generators
       const lineGenerators = {
@@ -58,8 +73,8 @@
   
       // Define colors for the lines
       const colors = {
-        'Doubled Immigration': 'steelblue',
-        'Recent Immigration': 'tomato'
+        'Doubled Immigration': '#5e9b85',
+        'Recent Immigration': '#024140'
       };
   
       // Conditionally draw lines
