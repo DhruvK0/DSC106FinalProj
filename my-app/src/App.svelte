@@ -4,10 +4,13 @@
   import StackedAreaChart from "./components/StackedAreaChart.svelte";
   import Lorem from "./components/Lorem.svelte";
   import TitleCard from "./assets/TitleCard.svelte";
+  import HeaderOne from "./assets/HeaderOne.svelte";
   import LineChart from "./components/LineChart.svelte";
   import VisaChart from "./components/VisaChart.svelte";
   import GdpLineChart from "./components/GDPLineChart.svelte";
-
+  import Bar from "./components/Bar.svelte";
+  import Container from "./components/Container.svelte";
+    import Counter from "./lib/Counter.svelte";
   let count;
   let index;
   let offset;
@@ -27,11 +30,9 @@
 
 <main>
   <TitleCard/>
-  <h1 class="flex items-center justify-center mb-10">A Change in Immigration</h1>
-  <LineChart/>
-  <h2 class="flex items-center justify-center ml-80 mr-80 mb-20">In 1965 the Immigration and Nationality Act was passed, repealing the long standing national-origin quotas which primarily favored immigrants from Western and Northern Europe. The new system favored immigrant families, which allowed well-educated families from non-European countries to establish themselves and create a foothold for their families to immigrate.</h2>
-  
-  <Lorem /> 
+  <div class="flex items-center justify-center m-40 text-4xl">Immigration in the United States serves as a dynamic force shaping innovation. The infusion of the world's smartest minds, from pioneers to skilled professionals, sparks creativity and propels industries forward. This melting pot of perspectives fosters breakthroughs in technology, medicine, and the arts. The enduring relationship between immigration and innovation defines the unique tapestry of progress in the United States.</div>
+  <HeaderOne/> 
+  <Bar/> 
   <Scroller
     bind:top
     bind:threshold
@@ -41,23 +42,39 @@
     bind:offset
     bind:progress
   >
-    <div slot="background" class="bg-orange-100 border-t-2 border-b-2 border-orange-500 p-4 text-lg overflow-hidden">
-      <p>current section: <strong>{index + 1}/{count}</strong></p>
+    <div slot="background" class="p-4 text-lg overflow-hidden">
+      <!-- <p>current section: <strong>{index + 1}/{count}</strong></p>
       <progress class="w-full" value="{count ? (index + 1) / count : 0}"></progress>
 
       <p>offset in current section</p>
       <progress class="w-full" value="{offset || 0}"></progress>
 
       <p>total progress</p>
-      <progress class="w-full" value="{progress || 0}"></progress>
+      <progress class="w-full" value="{progress || 0}"></progress> -->
+
+      {#if index === 0}
+      <div class="flex items-left justify-left">
+        <LineChart/>
+
+      </div>
+        
+      {/if}
+      {#if index === 1}
+      <div class="flex items-left justify-left">
+          <LineChart/>
+      </div>
+      {/if}
     </div>
 
-    <div slot="foreground" class="pointer-events-none" style="padding-left: 50%;">
-      <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 1</section>
-      <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 2</section>
-      <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 3</section>
-      <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 4</section>
-      <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 5</section>
+    <div slot="foreground" class="pointer-events-none mb-40" style="padding-left: 50%;">
+      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 m-20">
+          <h2 class="flex items-center justify-center">Here we can see the current Fortune 500 companies broken down into sectors. The purple sections represent the amount of companies that are founded by American born founders. The orange sections represent the amount of companies founded by immigrants or children of immigrants.</h2>
+        </section>
+      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 ml-20 mt-40 pb-40">
+          <h2 class="flex items-center justify-center">In 1965 the Immigration and Nationality Act was passed, repealing the long standing national-origin quotas which primarily favored immigrants from Western and Northern Europe. The new system favored immigrant families, which allowed well-educated families from non-European countries to establish themselves and create a foothold for their families to immigrate.</h2>
+      </section>
+      <!-- <section class="pointer-events-all h-80 bg-opacity-50 text-white p-4 m-20">section 4</section> -->
+      <!-- <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 5</section> -->
     </div>
   </Scroller>
   <StackedAreaChart />
@@ -114,7 +131,6 @@
     </div>
 
   </Scroller>
-  <Lorem />
 </main>
 
 <style>
