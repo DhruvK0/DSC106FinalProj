@@ -11,6 +11,8 @@
   import Bar from "./components/Bar.svelte";
   import Container from "./components/Container.svelte";
     import Counter from "./lib/Counter.svelte";
+  import Biden from "./assets/biden.svelte";
+
   let count;
   let index;
   let offset;
@@ -95,7 +97,7 @@
         <h2>Projection: $47 trillion in GDP at doubled the current rate of immigration</h2>
       </section>
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
-        <h2>Biden raising cap on immigrant visas by 250,000 every 5 years</h2>
+
       </section>
     </div>
 
