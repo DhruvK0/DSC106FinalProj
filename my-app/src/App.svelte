@@ -32,7 +32,7 @@
   <TitleCard/>
   <div class="flex items-center justify-center m-40 text-4xl">Immigration in the United States serves as a dynamic force shaping innovation. The infusion of the world's smartest minds, from pioneers to skilled professionals, sparks creativity and propels industries forward. This melting pot of perspectives fosters breakthroughs in technology, medicine, and the arts. The enduring relationship between immigration and innovation defines the unique tapestry of progress in the United States.</div>
   <HeaderOne/> 
-  <Bar/> 
+  <!-- <Bar/>  -->
   <Scroller
     bind:top
     bind:threshold
@@ -54,8 +54,8 @@
 
       {#if index === 0}
       <div class="flex items-left justify-left">
-        <LineChart/>
-
+        <!-- <LineChart/> -->
+        <Bar />
       </div>
         
       {/if}
