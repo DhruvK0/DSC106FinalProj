@@ -33,50 +33,9 @@
   <div class="flex items-center justify-center m-40 text-4xl">Immigration in the United States serves as a dynamic force shaping innovation. The infusion of the world's smartest minds, from pioneers to skilled professionals, sparks creativity and propels industries forward. This melting pot of perspectives fosters breakthroughs in technology, medicine, and the arts. The enduring relationship between immigration and innovation defines the unique tapestry of progress in the United States.</div>
   <HeaderOne/> 
   <!-- <Bar/>  -->
-  <Scroller
-    bind:top
-    bind:threshold
-    bind:bottom
-    bind:count
-    bind:index
-    bind:offset
-    bind:progress
-  >
-    <div slot="background" class="p-4 text-lg overflow-hidden">
-      <!-- <p>current section: <strong>{index + 1}/{count}</strong></p>
-      <progress class="w-full" value="{count ? (index + 1) / count : 0}"></progress>
-
-      <p>offset in current section</p>
-      <progress class="w-full" value="{offset || 0}"></progress>
-
-      <p>total progress</p>
-      <progress class="w-full" value="{progress || 0}"></progress> -->
-
-      {#if index === 0}
-      <div class="flex items-left justify-left">
-        <!-- <LineChart/> -->
-        <Bar />
-      </div>
-        
-      {/if}
-      {#if index === 1}
-      <div class="flex items-left justify-left">
-          <LineChart/>
-      </div>
-      {/if}
-    </div>
-
-    <div slot="foreground" class="pointer-events-none mb-40" style="padding-left: 50%;">
-      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 m-20">
-          <h2 class="flex items-center justify-center">Here we can see the current Fortune 500 companies broken down into sectors. The purple sections represent the amount of companies that are founded by American born founders. The orange sections represent the amount of companies founded by immigrants or children of immigrants.</h2>
-        </section>
-      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 ml-20 mt-40 pb-40">
-          <h2 class="flex items-center justify-center">In 1965 the Immigration and Nationality Act was passed, repealing the long standing national-origin quotas which primarily favored immigrants from Western and Northern Europe. The new system favored immigrant families, which allowed well-educated families from non-European countries to establish themselves and create a foothold for their families to immigrate.</h2>
-      </section>
-      <!-- <section class="pointer-events-all h-80 bg-opacity-50 text-white p-4 m-20">section 4</section> -->
-      <!-- <section class="pointer-events-all h-80 bg-opacity-50 bg-black text-white p-4 mb-8">section 5</section> -->
-    </div>
-  </Scroller>
+  <LineChart/>
+  <h2 class="flex items-center justify-center">1965: Immigration and Nationality Act</h2>
+  <div class="h-20"></div>
   <StackedAreaChart />
   <div class="h-80"></div>
   <Scroller
@@ -105,28 +64,38 @@
       </div>
         
       {/if}
-      {#if index === 2 || index === 3}
+      {#if index === 3 || index === 4}
       <div class="flex items-left justify-left">
           <GdpLineChart {index}/>
+      </div>
+      {/if}
+      {#if index === 2}
+      <div class="flex items-left justify-left">
+          <Bar/>
       </div>
       {/if}
     </div>
 
     <div slot="foreground" class="mt-10" style="padding-left: 50%;">
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
-        <h2>CA immigrants suffer from generally low education levels, with just 32% of them having a Bachelor's degree or better in comparison to 38% of their US-born counterparts. Furthermore, a whopping 29% of CA immigrants do not have a high school degree, in comparison to the 7% for US-born Californians.</h2>
+        <h2>32% of CA immigrants have Bachelor's degrees, in comparison to 38% of US-born Californians</h2>
       </section>
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
-        <h2>The tides have shifted since, with 52% of recent CA immigrants attaining a Bachelor's degree or better. Though a significant proportion of recent immigrants do not have a high school degree (17%), the trend in education of immigrants is positive -- and will only lead to more innovation in the future.</h2>
+        <h2>52% of recent CA immigrants have Bachelor's degrees.</h2>
       </section>
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
-        <h2>We're currently projected for a GDP of $37 trillion by 2050 at the current rate of immigration.</h2>
+        <h2>
+          Breakdown of immigrants / US-born founders of fortune 500 companies:
+        </h2>
       </section>
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
-        <h2>...but a GDP of $47 trillion if we double the immigration rate. That's a 27% increase in U.S. GDP. This is further evidence that action needs to be taken to increase the flow of immigrants, as it could greatly boost innovation -- and our economy in general.</h2>
+        <h2>Projection: $37 trillion in GDP at current rate of immigration.</h2>
       </section>
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
-        <h2>Luckily, the U.S. government seems to have recognized this. Biden recently advocated for a bill that will raise the cap on immigrant visas by 250,000 every 5 years -- the first to raise the cap in over 30 years. If legislation and the system continues to grow to support immigrants, the future is bright.</h2>
+        <h2>Projection: $47 trillion in GDP at doubled the current rate of immigration</h2>
+      </section>
+      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
+        <h2>Biden raising cap on immigrant visas by 250,000 every 5 years</h2>
       </section>
     </div>
 

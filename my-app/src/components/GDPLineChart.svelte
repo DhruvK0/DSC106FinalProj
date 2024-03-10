@@ -78,10 +78,10 @@
       };
   
       // Conditionally draw lines
-      if (index === 2) {
+      if (index === 3) {
         // Draw only "Recent Immigration" line
         drawLine(svg, data, lineGenerators['Recent Immigration'], colors['Recent Immigration']);
-      } else if (index === 3) {
+      } else if (index === 4) {
         // Draw both lines
         Object.keys(lineGenerators).forEach(key => {
           drawLine(svg, data, lineGenerators[key], colors[key]);
