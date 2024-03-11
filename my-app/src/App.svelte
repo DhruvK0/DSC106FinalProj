@@ -12,6 +12,7 @@
   import Container from "./components/Container.svelte";
     import Counter from "./lib/Counter.svelte";
   import Biden from "./assets/biden.svelte";
+  import HeaderThree from "./assets/HeaderThree.svelte";
 
   let count;
   let index;
@@ -39,7 +40,8 @@
   <h2 class="flex items-center justify-center">1965: Immigration and Nationality Act</h2>
   <div class="h-20"></div>
   <StackedAreaChart />
-  <div class="h-80"></div>
+  <div class="h-20"></div>
+  <HeaderThree/>
   <Scroller
     bind:top
     bind:threshold
