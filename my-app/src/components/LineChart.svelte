@@ -43,6 +43,26 @@
     .curve(curveNatural)
     .x((d) => xScale(d.year))
     .y((d) => yScale(d.amt))(dataset);
+  $: verticalLineData =
+    dataset.length > 0 && yScale
+      ? [
+          {
+            year: new Date(1965, 0, 1),
+            amt: yScale.domain()[0],
+          },
+          {
+            year: new Date(1965, 0, 1),
+            amt: yScale.domain()[1],
+          },
+        ]
+      : [];
+
+  $: verticalLine =
+    verticalLineData.length > 0
+      ? line()
+          .x((d) => xScale(d.year))
+          .y((d) => yScale(d.amt))(verticalLineData)
+      : "";
 </script>
 
 <main class="flex items-center justify-center">
@@ -53,16 +73,21 @@
       <text transform={`translate(${-80},${innerHeight / 2}) rotate(-90)`}
         >Number of Immigrants</text
       >
-      <path d={line_gen} />
+      <path d={line_gen}/>
       {#each dataset as data, i}
         <circle
           cx={xScale(data.year)}
           cy={yScale(data.amt)}
           r="3"
           in:fly={{ duration: 5000, delay: i * 15 }}
-        />
+        >
+          <title>Year: {timeFormat("%Y")(data.year)}, Number of Immigrants: {data.amt}</title>
+        </circle>
       {/each}
       <text x={innerWidth / 2} y={innerHeight + 35}>Year</text>
+      <text x={width / 2 - margin.left} y={0} text-anchor="middle" class="chart-title">Immigration Trends Over Time</text>
+      <path d={verticalLine} class="path2"/>
+
     </g>
   </svg>
 </main>
@@ -74,6 +99,15 @@
   path {
     fill: transparent;
     stroke: rgb(18, 153, 90);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+    stroke-dasharray: 4400;
+    stroke-dashoffset: 0;
+    animation: draw 25s ease;
+  }
+  .path2 {
+    fill: transparent;
+    stroke: rgb(197, 197, 197);
     stroke-width: 2.5;
     stroke-linejoin: round;
     stroke-dasharray: 4400;
