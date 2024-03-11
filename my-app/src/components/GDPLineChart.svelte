@@ -26,8 +26,8 @@
       d3.select(chart).select("svg").remove();
   
       const margin = { top: 10, right: 30, bottom: 30, left: 120 },
-        width = 460 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+        width = 600 - margin.left - margin.right,
+        height = 600 - margin.top - margin.bottom;
   
       const svg = d3.select(chart)
         .append('svg')
@@ -105,5 +105,5 @@
     }
   </script>
   
-  <div bind:this={chart}></div>
+  <div class="ml-20"bind:this={chart}></div>
   

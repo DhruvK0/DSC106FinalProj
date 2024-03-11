@@ -12,6 +12,7 @@
   import Container from "./components/Container.svelte";
     import Counter from "./lib/Counter.svelte";
   import Biden from "./assets/biden.svelte";
+  import BidenImg from "./assets/biden.png";
   import HeaderThree from "./assets/HeaderThree.svelte";
 
   let count;
@@ -36,9 +37,15 @@
   <div class="flex items-center justify-center m-40 text-4xl">Immigration in the United States serves as a dynamic force shaping innovation. The infusion of the world's smartest minds, from pioneers to skilled professionals, sparks creativity and propels industries forward. This melting pot of perspectives fosters breakthroughs in technology, medicine, and the arts. The enduring relationship between immigration and innovation defines the unique tapestry of progress in the United States.</div>
   <HeaderOne/> 
   <!-- <Bar/>  -->
+  <!-- <h2 class="flex items-center justify-center">1965: Immigration and Nationality Act</h2> -->
   <LineChart/>
-  <h2 class="flex items-center justify-center">1965: Immigration and Nationality Act</h2>
   <div class="h-20"></div>
+  <h2 class="flex items-center justify-center pr-40 pl-40 mb-20">In 1965 the Immigration and Nationality Act was passed, repealing the long standing national-origin quotas which primarily favored immigrants from Western and Northern Europe. The new system favored immigrant families, which allowed well-educated families from non-European countries to establish themselves and create a foothold for their families to immigrate.</h2>
+  <div class="flex items-center justify-center">
+    <img src={BidenImg} alt='biden' class="flex items center justify-center w-1/2"/>
+  </div>
+  
+  <Biden/>
   <StackedAreaChart />
   <div class="h-20"></div>
   <HeaderThree/>

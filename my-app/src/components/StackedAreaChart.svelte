@@ -6,8 +6,8 @@
     onMount(() => {
         d3.csv("data/patents_grouped.csv").then(function(data) {
             const margin = { top: 10, right: 30, bottom: 30, left: 30 };
-            const width = 800 - margin.left - margin.right;
-            const height = 500 - margin.top - margin.bottom;
+            const width = 900 - margin.left - margin.right;
+            const height = 675 - margin.top - margin.bottom;
 
             const svg = d3.select(".chart")
                 .append("svg")
@@ -216,7 +216,7 @@
     }
 </style>
 
-<h1>Patent applications in the U.S. by the applicants' regions of origin from 1965-2015</h1>
+<h1 class="mt-20">Patent applications in the U.S. by the applicants' regions of origin from 1965-2015</h1>
 <h3>Hover over an area on the plot for more detail. Click to update tooltip.</h3>
 
-<div class="chart"></div>
+<div class="chart mb-40"></div>

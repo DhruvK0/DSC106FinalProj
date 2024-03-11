@@ -26,8 +26,8 @@
     });
   });
   const margin = { top: 15, bottom: 50, left: 100, right: 20 };
-  const width = 810,
-    height = 540;
+  const width = 900,
+    height = 600;
   const innerHeight = height - margin.top - margin.bottom,
     innerWidth = width - margin.left - margin.right;
   const tickFormat = (value) => timeFormat("%a")(value);
@@ -85,7 +85,7 @@
         </circle>
       {/each}
       <text x={innerWidth / 2} y={innerHeight + 35}>Year</text>
-      <text x={width / 2 - margin.left} y={0} text-anchor="middle" class="chart-title">Immigration Trends Over Time</text>
+      <text x={width / 2 - margin.left} y={300} text-anchor="middle" class="chart-title">1965: Immigration and Nationality Act</text>
       <path d={verticalLine} class="path2"/>
 
     </g>
