@@ -41,11 +41,7 @@
   <LineChart/>
   <div class="h-20"></div>
   <h2 class="flex items-center justify-center pr-40 pl-40 mb-20">In 1965 the Immigration and Nationality Act was passed, repealing the long standing national-origin quotas which primarily favored immigrants from Western and Northern Europe. The new system favored immigrant families, which allowed well-educated families from non-European countries to establish themselves and create a foothold for their families to immigrate.</h2>
-  <div class="flex items-center justify-center">
-    <img src={BidenImg} alt='biden' class="flex items center justify-center w-1/2"/>
-  </div>
-  
-  <Biden/>
+
   <StackedAreaChart />
   <div class="h-20"></div>
   <HeaderThree/>
@@ -105,12 +101,14 @@
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
         <h2>Projection: $47 trillion in GDP at doubled the current rate of immigration</h2>
       </section>
-      <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
-
-      </section>
     </div>
 
   </Scroller>
+  <div class="flex items-center justify-center">
+    <img src={BidenImg} alt='biden' class="flex items center justify-center w-1/2"/>
+  </div>
+  
+  <Biden/>
 </main>
 
 <style>
