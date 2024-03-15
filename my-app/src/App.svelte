@@ -14,6 +14,11 @@
   import Biden from "./assets/biden.svelte";
   import BidenImg from "./assets/biden.png";
   import HeaderThree from "./assets/HeaderThree.svelte";
+  import BrinImg from "./assets/sergeybrin.jpeg";
+  import GroveImg from "./assets/andygrove.jpg";
+  import MuskCompaniesImg from "./assets/muskcompanies.jpg";
+  import OmidyarImg from "./assets/pierreomidyar.jpeg";
+  import ytFoundersImg from "./assets/ytfounders.jpg";
 
   let count;
   let index;
@@ -43,6 +48,64 @@
   <h2 class="flex items-center justify-center pr-40 pl-40 mb-20">In 1965 the Immigration and Nationality Act was passed, repealing the long standing national-origin quotas which primarily favored immigrants from Western and Northern Europe. The new system favored immigrant families, which allowed well-educated families from non-European countries to establish themselves and create a foothold for their families to immigrate.</h2>
 
   <StackedAreaChart />
+  <!-- Andy Grove -->
+  <div class="flex items-center flex-col mb-20 mt-20">
+    <div class="flex items-center"> <!-- Use flex to align items in a row -->
+        <div class="flex flex-col items-center"> <!-- Use flex-col to stack text vertically -->
+            <p class="text-center text-2xl">Andy Grove, a Hungarian immigrant, served as the CEO of </p> 
+            <p class="text-center text-2xl"> Intel from 1987-1998 and played a key role in the development and production of microprocessors.</p> 
+        </div>
+        <img src={GroveImg} alt='grove' class="w-1/2 border-l-2 border-transparent pl-0 pr-10"/> <!-- pl-0: 0px left padding -->
+    </div>
+</div>
+
+<!-- Pierre Omidyar -->
+<div class="flex items-center flex-col mb-20">
+  <div class="flex items-center"> <!-- Use flex to align items in a row -->
+      <img src={OmidyarImg} alt='omidyar' class="w-1/2 border-l-2 border-transparent pl-10 pr-20"/> <!-- pr-10: 10px right padding -->
+      <div class="flex flex-col items-center"> <!-- Use flex-col to stack text vertically -->
+          <p class="text-center text-2xl text-orange">Pierre Omidyar, an immigrant from France, founded</p>           
+          <p class="text-center text-2xl text-orange">eBay, a leading online marketplace, in 1995.</p>           
+      </div>
+  </div>
+</div>
+
+<!-- Sergey Brin -->
+<div class="flex items-center flex-col mb-20">
+  <div class="flex items-center"> <!-- Use flex to align items in a row -->
+      <div class="flex flex-col items-center"> <!-- Use flex-col to stack text vertically -->
+        <p class="text-center text-2xl">Sergey Brin, a Russian immigrant, co-founded</p>
+        <p class="text-center text-2xl">Google, one of the world's most influential technology companies, in 1998.</p> 
+      </div>
+      <img src={BrinImg} alt='brin' class="w-1/2 border-l-2 border-transparent pl-5 pr-10"/> <!-- pl-0: 0px left padding -->
+  </div>
+</div>
+
+<!-- Elon Musk -->
+<div class="flex items-center flex-col mb-20">
+  <div class="flex items-center"> <!-- Use flex to align items in a row -->
+      <img src={MuskCompaniesImg} alt='muskcompanies' class="w-1/2 border-l-2 border-transparent pl-10 pr-5"/> <!-- pr-10: 10px right padding -->
+      <div class="flex flex-col items-center"> <!-- Use flex-col to stack text vertically -->
+          <p class="text-center text-2xl text-orange">Elon Musk, an immigrant from South Africa, founded</p> 
+          <p class="text-center text-2xl text-orange">several successful companies including</p> 
+          <p class="text-center text-2xl text-orange">PayPal (1998), SpaceX (2002), and Tesla (2003).</p> 
+          
+      </div>
+  </div>
+</div>
+
+<!-- YouTube Founders -->
+<div class="flex items-center flex-col mb-20">
+  <div class="flex items-center"> <!-- Use flex to align items in a row -->
+      <div class="flex flex-col items-center"> <!-- Use flex-col to stack text vertically -->
+        <p class="text-center text-2xl">Steve Chen and Jawed Karim, immigrants from China and Germany respectively, co-founded YouTube, a popular</p>
+        <p class="text-center text-2xl">video-sharing platform.</p> 
+      </div>
+      <img src={ytFoundersImg} alt='ytfounders' class="w-2/3 border-l-2 border-transparent pl-0 pr-10"/> <!-- pl-0: 0px left padding -->
+  </div>
+</div>
+<p class="text-center text-3xl">These are just a few examples of the many immigrants who have made significant contributions to innovation and technology in the United States.</p>
+
   <div class="h-20"></div>
   <HeaderThree/>
   <Scroller
