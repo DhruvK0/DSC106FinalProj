@@ -99,7 +99,7 @@
   <div class="flex items-center"> <!-- Use flex to align items in a row -->
       <div class="flex flex-col items-center"> <!-- Use flex-col to stack text vertically -->
         <p class="text-center text-2xl">Steve Chen and Jawed Karim, immigrants from China and Germany respectively, co-founded YouTube, a popular</p>
-        <p class="text-center text-2xl">video-sharing platform.</p> 
+        <p class="text-center text-2xl">video-sharing platform, in 2005.</p> 
       </div>
       <img src={ytFoundersImg} alt='ytfounders' class="w-2/3 border-l-2 border-transparent pl-0 pr-10"/> <!-- pl-0: 0px left padding -->
   </div>
