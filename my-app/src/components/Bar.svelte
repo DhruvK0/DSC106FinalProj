@@ -55,6 +55,13 @@
     // stack the data? --> stack per subgroup
     const stackedData = d3.stack().keys(subgroups)(data);
 
+    //create legend
+    svg.append("circle").attr("cx",70).attr("cy",40).attr("r", 6).style("fill", "#39274F")
+    svg.append("circle").attr("cx",70).attr("cy",70).attr("r", 6).style("fill", "#DA9969")
+    svg.append("text").attr("x", 90).attr("y", 40).text("Non-Immigrant Founded Companies").style("font-size", "15px").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", 90).attr("y", 70).text("Immigrant Founded Companies").style("font-size", "15px").attr("alignment-baseline","middle")
+
+
     // Show the bars
     svg
       .append('g')
