@@ -148,10 +148,10 @@
 
     <div slot="foreground" class="mt-10" style="padding-left: 50%;">
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
-        <h2>32% of CA immigrants have Bachelor's degrees, in comparison to 38% of US-born Californians</h2>
+        <h2>CA immigrants suffer from generally low education levels, with just 32% of them having a Bachelor's degree or better in comparison to 38% of their US-born counterparts. Furthermore, a whopping 29% of CA immigrants do not have a high school degree, in comparison to the 7% for US-born Californians.</h2>
       </section>
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
-        <h2>52% of recent CA immigrants have Bachelor's degrees.</h2>
+        <h2>The tides are beginning to shift, with 52% of recent CA immigrants attaining a Bachelor's degree or better. Though a significant proportion of recent immigrants do not have a high school degree (17%), the trend in education of immigrants is positive -- and will only lead to more innovation in the future.</h2>
       </section>
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
         <h2>
@@ -162,7 +162,7 @@
         <h2>Projection: $37 trillion in GDP at current rate of immigration.</h2>
       </section>
       <section class="pointer-events-all custom-height bg-opacity-50 text-black p-4 mb-8">
-        <h2>Projection: $47 trillion in GDP at doubled the current rate of immigration</h2>
+        <h2>Projection: $47 trillion in GDP at doubled the current rate of immigration. That's a 27% increase in U.S. GDP.</h2>
       </section>
     </div>
 
