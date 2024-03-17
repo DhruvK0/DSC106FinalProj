@@ -222,4 +222,4 @@
 
 <div class="chart"></div>
 
-<p class="text-center text-3xl">There have been numerous innovations and contributions made by immigrants to the United States between the 1970s and 2000s. Here are a few examples:</p>
+<p class="text-center text-3xl ml-40 mr-40">There have been numerous innovations and contributions made by immigrants to the United States between the 1970s and 2000s. Here are a few examples:</p>

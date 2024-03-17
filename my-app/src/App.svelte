@@ -40,6 +40,9 @@
 <main>
   <TitleCard/>
   <div class="flex items-center justify-center m-40 text-4xl">Immigration in the United States serves as a dynamic force shaping innovation. The infusion of the world's smartest minds, from pioneers to skilled professionals, sparks creativity and propels industries forward. This melting pot of perspectives fosters breakthroughs in technology, medicine, and the arts. The enduring relationship between immigration and innovation defines the unique tapestry of progress in the United States.</div>
+  <div class="aspect-w-16 aspect-h-9 h-full flex items-center justify-center mb-20">
+    <iframe width="960" height="540" src="https://www.youtube.com/embed/cFTcc8Ashbw?si=4GOL2d99UuEUsQAA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
   <HeaderOne/> 
   <!-- <Bar/>  -->
   <!-- <h2 class="flex items-center justify-center">1965: Immigration and Nationality Act</h2> -->
@@ -104,7 +107,7 @@
       <img src={ytFoundersImg} alt='ytfounders' class="w-2/3 border-l-2 border-transparent pl-0 pr-10"/> <!-- pl-0: 0px left padding -->
   </div>
 </div>
-<p class="text-center text-3xl">These are just a few examples of the many immigrants who have made significant contributions to innovation and technology in the United States.</p>
+<p class="text-center text-3xl ml-40 mr-40">These are just a few examples of the many immigrants who have made significant contributions to innovation and technology in the United States.</p>
 
   <div class="h-20"></div>
   <HeaderThree/>
@@ -167,7 +170,7 @@
     </div>
 
   </Scroller>
-  <div class="flex items-center justify-center">
+  <div class="flex items-center justify-center mt-40">
     <img src={BidenImg} alt='biden' class="flex items center justify-center w-1/2"/>
   </div>
   
